@@ -84,7 +84,7 @@ const JournalEntry: React.FC = () => {
 
   const analyzeSentiment = async (text: string) => {
     try {
-      const response = await axios.post('/api/journal/analyze', { text });
+      const response = await axios.post('https://trackmymood.onrender.com/api/journal/analyze', { text });
       setSentimentScore(response.data.score);
       setMood(response.data.mood);
     } catch (err) {
@@ -177,7 +177,7 @@ const JournalEntry: React.FC = () => {
     
     try {
       setLoading(true);
-      await axios.delete(`/api/journal/${id}`);
+      await axios.delete(`https://trackmymood.onrender.com/api/journal/${id}`);
       navigate('/dashboard');
     } catch (err) {
       setError('Failed to delete entry');
