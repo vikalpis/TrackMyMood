@@ -159,9 +159,9 @@ const JournalEntry: React.FC = () => {
       
       let response;
       if (isEditing) {
-        response = await axios.put(`/api/journal/${id}`, journalData);
+        response = await axios.put(`https://trackmymood.onrender.com/api/journal/${id}`, journalData);
       } else {
-        response = await axios.post('/api/journal', journalData);
+        response = await axios.post('https://trackmymood.onrender.com/api/journal', journalData);
       }
       
       navigate('/dashboard');
