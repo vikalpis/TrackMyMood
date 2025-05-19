@@ -65,7 +65,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post('/api/auth/login', { email, password });
+      const response = await axios.post('https://trackmymood.onrender.com/api/auth/login', { email, password });
       const { token, user } = response.data;
       
       localStorage.setItem('token', token);
@@ -84,7 +84,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
     setLoading(true);
     setError(null);
     try {
-      const response = await axios.post('/api/auth/register', { name, email, password });
+      const response = await axios.post('https://trackmymood.onrender.com/api/auth/register', { name, email, password });
       const { token, user } = response.data;
       
       localStorage.setItem('token', token);
