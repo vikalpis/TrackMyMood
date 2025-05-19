@@ -43,7 +43,7 @@ const JournalEntry: React.FC = () => {
       const fetchEntry = async () => {
         try {
           setLoading(true);
-          const response = await axios.get(`/api/journal/${id}`);
+          const response = await axios.get(`https://trackmymood.onrender.com/api/journal/${id}`);
           const entry = response.data;
           
           setFormData({
@@ -146,7 +146,7 @@ const JournalEntry: React.FC = () => {
       
       // Analyze sentiment one last time if needed
       if (!sentimentScore) {
-        const response = await axios.post('/api/journal/analyze', { text: formData.content });
+        const response = await axios.post('https://trackmymood.onrender.com/api/journal/analyze', { text: formData.content });
         setSentimentScore(response.data.score);
         setMood(response.data.mood);
       }
