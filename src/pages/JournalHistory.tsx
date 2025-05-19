@@ -39,7 +39,7 @@ const JournalHistory: React.FC = () => {
     const fetchEntries = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/journal');
+        const response = await axios.get('https://trackmymood.onrender.com/api/journal');
         // Sort entries by date (newest first)
         const sortedEntries = response.data.sort((a: JournalEntry, b: JournalEntry) => 
           new Date(b.createdAt).getTime() - new Date(a.createdAt).getTime()
