@@ -45,7 +45,7 @@ export const AuthProvider: React.FC<AuthProviderProps> = ({ children }) => {
       }
 
       try {
-        const response = await axios.get('/api/users/me');
+        const response = await axios.get('https://trackmymood.onrender.com/users/me');
         setUser(response.data);
       } catch (err) {
         console.error('Error fetching user:', err);
