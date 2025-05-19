@@ -1,0 +1,165 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary-50: #eef6ff;
+    --primary-100: #d8eaff;
+    --primary-200: #b6d8ff;
+    --primary-300: #82bdff;
+    --primary-400: #499bff;
+    --primary-500: #2f7fff;
+    --primary-600: #1561f3;
+    --primary-700: #134bdd;
+    --primary-800: #1640b3;
+    --primary-900: #19388e;
+    
+    --secondary-50: #eefcf5;
+    --secondary-100: #d6f7e5;
+    --secondary-200: #b2edd0;
+    --secondary-300: #7fdcb3;
+    --secondary-400: #50c78f;
+    --secondary-500: #32ac73;
+    --secondary-600: #22885a;
+    --secondary-700: #1e6d4c;
+    --secondary-800: #1b573e;
+    --secondary-900: #174835;
+    
+    --accent-50: #f5f0ff;
+    --accent-100: #ece3ff;
+    --accent-200: #daccff;
+    --accent-300: #c1a6ff;
+    --accent-400: #a878ff;
+    --accent-500: #9370db;
+    --accent-600: #7b42cf;
+    --accent-700: #6931af;
+    --accent-800: #58298f;
+    --accent-900: #492673;
+  }
+
+  .dark {
+    --bg-primary: #121212;
+    --bg-secondary: #1e1e1e;
+    --text-primary: #ffffff;
+    --text-secondary: #a0aec0;
+    --border-color: #2d2d2d;
+  }
+
+  .light {
+    --bg-primary: #ffffff;
+    --bg-secondary: #f7fafc;
+    --text-primary: #1a202c;
+    --text-secondary: #4a5568;
+    --border-color: #e2e8f0;
+  }
+}
+
+body {
+  @apply bg-[var(--bg-primary)] text-[var(--text-primary)] transition-colors duration-200;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply bg-[var(--primary-500)] text-white hover:bg-[var(--primary-600)] focus:ring-[var(--primary-500)];
+  }
+  
+  .btn-secondary {
+    @apply bg-[var(--secondary-500)] text-white hover:bg-[var(--secondary-600)] focus:ring-[var(--secondary-500)];
+  }
+  
+  .btn-accent {
+    @apply bg-[var(--accent-500)] text-white hover:bg-[var(--accent-600)] focus:ring-[var(--accent-500)];
+  }
+  
+  .btn-outline {
+    @apply border border-[var(--border-color)] bg-[var(--bg-primary)] hover:bg-[var(--bg-secondary)] text-[var(--text-primary)];
+  }
+  
+  .input-field {
+    @apply w-full px-3 py-2 border border-[var(--border-color)] rounded-lg bg-[var(--bg-primary)] text-[var(--text-primary)] focus:outline-none focus:ring-2 focus:ring-[var(--primary-500)] focus:border-[var(--primary-500)] transition-colors duration-200;
+  }
+  
+  .card {
+    @apply bg-[var(--bg-primary)] rounded-xl shadow-sm border border-[var(--border-color)] p-6 transition-all duration-200;
+  }
+  
+  .tag {
+    @apply px-3 py-1 rounded-full text-sm font-medium transition-all duration-200;
+  }
+}
+
+/* Enhanced mood colors with dark mode support */
+.mood-happy {
+  @apply bg-green-100 text-green-800 dark:bg-green-900 dark:text-green-100;
+}
+
+.mood-neutral {
+  @apply bg-blue-100 text-blue-800 dark:bg-blue-900 dark:text-blue-100;
+}
+
+.mood-sad {
+  @apply bg-indigo-100 text-indigo-800 dark:bg-indigo-900 dark:text-indigo-100;
+}
+
+.mood-angry {
+  @apply bg-red-100 text-red-800 dark:bg-red-900 dark:text-red-100;
+}
+
+.mood-anxious {
+  @apply bg-yellow-100 text-yellow-800 dark:bg-yellow-900 dark:text-yellow-100;
+}
+
+.mood-grateful {
+  @apply bg-purple-100 text-purple-800 dark:bg-purple-900 dark:text-purple-100;
+}
+
+/* Enhanced animations */
+.fade-in {
+  animation: fadeIn 0.5s ease-in;
+}
+
+.slide-up {
+  animation: slideUp 0.3s ease-out;
+}
+
+.scale-in {
+  animation: scaleIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Dark mode transitions */
+.dark-transition {
+  @apply transition-colors duration-200;
+}
