@@ -69,7 +69,7 @@ const Dashboard: React.FC = () => {
     const fetchData = async () => {
       try {
         setLoading(true);
-        const response = await axios.get('/api/journal');
+        const response = await axios.get('https://trackmymood.onrender.com/api/journal');
         setEntries(response.data);
 
         // Process data for chart and tags
